@@ -100,7 +100,9 @@ export async function runBuild(env: Env, recipe: RecipeInfo): Promise<void> {
         ...buildPackerVars(env, recipe, needsStaticIp),
         recipeHcl,
     ]
-    const remoteEnv = buildRemoteEnv(env)
+    const remoteEnv =
+    buildRemoteEnv(env) +
+    ' PACKER_LOG=1 PACKER_LOG_PATH=/tmp/cofoundry/packer-debug.log'
     await remoteStreaming(
         env.SSH_TARGET,
         `${remoteEnv} ${packerArgs.join(' ')}`

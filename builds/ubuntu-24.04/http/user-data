@@ -29,8 +29,9 @@ autoinstall:
   storage:
     layout:
       name: lvm
-    swap:
-      size: 0
+      sizing-policy: all
+  swap:
+    size: 0
   user-data:
     package_upgrade: false
     users:

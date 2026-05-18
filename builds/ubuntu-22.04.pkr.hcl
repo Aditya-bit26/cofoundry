@@ -116,10 +116,10 @@ source "proxmox-iso" "ubuntu-22-04" {
 
   http_directory = "${path.root}/${local.recipe_name}/http"
 
-  boot_wait = "5s"
+  boot_wait = "10s"
   boot_command = [
     "e<wait>",
-    "<down><down><down><end>",
+    "<down><wait><down><wait><down><wait><end>",
     "<bs><bs><bs><wait>",
     " autoinstall ds=nocloud-net\\;s=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ ip=${var.build_ip}::${var.build_gw}:255.255.255.0::::${var.build_dns} ---<wait>",
     "<f10><wait>",

@@ -57,8 +57,8 @@ jobs:
           PVE_TOKEN_SECRET: ${{ secrets.PVE_TOKEN_SECRET }}
           SSH_TARGET: ${{ secrets.SSH_TARGET }}
           PVE_DUMP_DIR: ${{ secrets.PVE_DUMP_DIR }}
-          TB_STORAGE: ${{ secrets.TB_STORAGE }}
-          TB_ISO_STORAGE: ${{ secrets.TB_ISO_STORAGE }}
+          CF_STORAGE: ${{ secrets.CF_STORAGE }}
+          CF_ISO_STORAGE: ${{ secrets.CF_ISO_STORAGE }}
           TB_BRIDGE: ${{ secrets.TB_BRIDGE }}
           TB_UPLOAD_CMD: ${{ secrets.TB_UPLOAD_CMD }}
           TB_PUBLIC_URL_TMPL: ${{ secrets.TB_PUBLIC_URL_TMPL }}

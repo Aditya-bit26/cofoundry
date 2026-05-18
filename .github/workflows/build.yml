@@ -37,6 +37,11 @@ jobs:
          chmod 600 ~/.ssh/id_ed25519
          ssh-keygen -y -f ~/.ssh/id_ed25519
          echo "StrictHostKeyChecking=no" >> ~/.ssh/config
+         
+      - name: Debug storage values
+        run: |
+         echo "CF_STORAGE=[$CF_STORAGE]"
+         echo "CF_ISO_STORAGE=[$CF_ISO_STORAGE]"
 
       # ── Build template ─────────────────────────────────────────────────────
       # inject-placeholders.sh generates an ephemeral SSH key (Linux) or

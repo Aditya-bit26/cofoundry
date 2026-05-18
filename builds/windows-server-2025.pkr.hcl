@@ -90,7 +90,6 @@ source "proxmox-iso" "windows-server-2025" {
 
   disks {
     disk_size    = "15G"
-    format       = "qcow2"
     storage_pool = var.proxmox_storage_pool
     type         = "sata"
   }

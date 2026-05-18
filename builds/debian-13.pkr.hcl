@@ -95,7 +95,6 @@ source "proxmox-iso" "debian-13" {
 
   disks {
     disk_size    = "5G"
-    format       = "qcow2"
     storage_pool = var.proxmox_storage_pool
     type         = "virtio"
   }

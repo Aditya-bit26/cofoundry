@@ -95,7 +95,6 @@ source "proxmox-iso" "ubuntu-25-10" {
 
   disks {
     disk_size    = "10G"
-    format       = "qcow2"
     storage_pool = var.proxmox_storage_pool
     type         = "virtio"
   }

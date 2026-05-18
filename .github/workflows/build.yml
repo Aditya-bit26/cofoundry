@@ -32,11 +32,11 @@ jobs:
       # ── SSH key (for vzdump post-processor → PVE node) ────────────────────
       - name: Set up SSH key
         run: |
-           mkdir -p ~/.ssh
-           echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
-           chmod 600 ~/.ssh/id_ed25519
-            ssh-keygen -y -f ~/.ssh/id_ed25519
-            echo "StrictHostKeyChecking=no" >> ~/.ssh/config
+         mkdir -p ~/.ssh
+         echo "${{ secrets.SSH_PRIVATE_KEY }}" | tr -d '\r' > ~/.ssh/id_ed25519
+         chmod 600 ~/.ssh/id_ed25519
+         ssh-keygen -y -f ~/.ssh/id_ed25519
+         echo "StrictHostKeyChecking=no" >> ~/.ssh/config
 
       # ── Build template ─────────────────────────────────────────────────────
       # inject-placeholders.sh generates an ephemeral SSH key (Linux) or
